@@ -1,7 +1,7 @@
 # Recommendation-system-using-Lucene
 
 I have implemented a content-based recommender via an web app by recommending similarity-based Java programming wikibooks content for
-Stackoverflow.com data set.
+Stackoverflow.com data set. (Team Project)
 
 Below are the tasks performed:
 1. Crawled java programming wikibooks pages
