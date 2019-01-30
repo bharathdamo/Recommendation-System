@@ -1,0 +1,180 @@
+ 1 ...
+ 2 
+ 3 public void init() {
+ 4     setFont(new Font("Times New Roman", Font.PLAIN, 24));
+ 5     setForeground(Color.white);
+ 6     setBackground(Color.black);
+ 7     setLayout(new GridLayout);
+ 8    
+ 9     ...
+10    
+11     add(label);
+12     add(button);
+13 }
+1 Button submitButton = new Button("Submit");
+1 public void init() {
+2    
+3     ...
+4    
+5     add(submitButton);
+6 }
+1 Label nameLabel = new Label("Name: ");
+2 
+3 ...
+4 
+5 public void init() {
+6     add(nameLabel);
+7 }
+ 1     TextField t1 = new TextField();                // Blank
+ 2     TextField t2 = new TextField(5);               // Blank in 5 columns
+ 3     TextField t3 = new TextField("Input here");    // Predefined text
+ 4     TextField t4 = new TextField("Input here", 5); // Predefined text in 5 columns
+ 5 
+ 6     ...
+ 7 
+ 8     public void init() {
+ 9         add(t1);
+10         add(t2);
+11         add(t3);
+12         add(t4);
+13         ...
+14     }
+1 Font f = new Font("Times New Roman", Font.PLAIN, 24);
+2 setFont(f);
+1 setFont(new Font("Times New Roman", Font.PLAIN, 24));
+1 a.setFont(new Font("Times New Roman", Font.PLAIN, 24));
+2 b.setFont(new Font("Times New Roman", Font.ITALIC, 28));
+1 setLayout(new FlowLayout());
+1 public void init() {
+2     setLayout(new FlowLayout());
+3     add(nameLabel);
+4     add(t1);
+5     add(submitButton);
+6 }
+ 1 import java.applet.Applet;
+ 2 import java.awt.Button;
+ 3 import java.awt.GridLayout;
+ 4 import java.awt.Label;
+ 5 import java.awt.TextField;
+ 6 
+ 7 public class GridLayoutApplet extends Applet {
+ 8 
+ 9     Button submitButton = new Button("Submit");
+10     TextField t1 = new TextField();                // Blank
+11     TextField t2 = new TextField(5);               // Blank in 5 columns
+12     TextField t3 = new TextField("Input here");    // Predefined text
+13     TextField t4 = new TextField("Input here", 5); // Predefined text in 5 columns
+14     Label nameLabel = new Label("Name: ");
+15 
+16     /**
+17      * Init.
+18      */
+19     public void init() {
+20         // 3 rows, 4 columns, 2 pixel spacing
+21         setLayout(new GridLayout(3, 4, 2, 2));
+22         add(nameLabel);
+23         add(t1);
+24         add(t2);
+25         add(t3);
+26         add(t4);
+27         add(submitButton);
+28     }
+29 }
+1 import java.awt.*;
+2 
+3 Container container = getContentPane();
+4 container.setLayout(new BorderLayout());
+5 
+6 JButton b2 = new JButton("two");
+7 // Add the button to the right edge.
+8 container.add(b2, BorderLayout.EAST);
+9 ...
+ 1 import java.applet.Applet;
+ 2 import java.awt.CardLayout;
+ 3 import java.awt.Label;
+ 4 
+ 5 public class CardLayoutApplet extends Applet {
+ 6 
+ 7     static final String COMPONENT_POSITION_TOP = "TOP";
+ 8     static final String COMPONENT_POSITION_MIDDLE = "MIDDLE";
+ 9     static final String COMPONENT_POSITION_BOTTOM = "BOTTOM";
+10 
+11     Label topLabel = new Label("At the top");
+12     Label middleLabel = new Label("In the middle");
+13     Label bottomLabel = new Label("At the bottom");
+14 
+15     /**
+16      * Init.
+17      */
+18     public void init() {
+19         setLayout(new CardLayout());
+20         add(COMPONENT_POSITION_TOP, topLabel);
+21         add(COMPONENT_POSITION_MIDDLE, middleLabel);
+22         add(COMPONENT_POSITION_BOTTOM, bottomLabel);
+23         ((CardLayout)getLayout()).show(this, COMPONENT_POSITION_MIDDLE);
+24     }
+25 }
+ 1 import java.applet.Applet;
+ 2 import java.awt.BorderLayout;
+ 3 import java.awt.Button;
+ 4 import java.awt.FlowLayout;
+ 5 import java.awt.GridLayout;
+ 6 import java.awt.Label;
+ 7 import java.awt.Panel;
+ 8 
+ 9 public class Answer5 extends Applet {
+10 
+11     Label applicationNameLabel = new Label("Wikibooks FTP");
+12     Button tool1Button = new Button("Tool");
+13     Button tool2Button = new Button("Tool");
+14     Button tool3Button = new Button("Tool");
+15     Button tool4Button = new Button("Tool");
+16     Button tool5Button = new Button("Tool");
+17     Button tool6Button = new Button("Tool");
+18     Button tool7Button = new Button("Tool");
+19     Button tool8Button = new Button("Tool");
+20     Button tool9Button = new Button("Tool");
+21     Label localFolderLabel = new Label("5 files");
+22     Label remoteFolderLabel = new Label("3 files");
+23     Label statusBarLabel = new Label("Available");
+24 
+25     /**
+26      * Init.
+27      */
+28     public void init() {
+29         setLayout(new BorderLayout());
+30 
+31         // The application name
+32         add(applicationNameLabel, BorderLayout.NORTH);
+33 
+34         // The center
+35         Panel centerPanel = new Panel();
+36         centerPanel.setLayout(new BorderLayout());
+37 
+38         // The buttons
+39         Panel buttonPanel = new Panel();
+40         buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+41         buttonPanel.add(tool1Button);
+42         buttonPanel.add(tool2Button);
+43         buttonPanel.add(tool3Button);
+44         buttonPanel.add(tool4Button);
+45         buttonPanel.add(tool5Button);
+46         buttonPanel.add(tool6Button);
+47         buttonPanel.add(tool7Button);
+48         buttonPanel.add(tool8Button);
+49         buttonPanel.add(tool9Button);
+50         centerPanel.add(buttonPanel, BorderLayout.CENTER);
+51 
+52         // The local and remote folders
+53         Panel folderPanel = new Panel();
+54         folderPanel.setLayout(new GridLayout(0, 2, 2, 2));
+55         folderPanel.add(localFolderLabel);
+56         folderPanel.add(remoteFolderLabel);
+57         centerPanel.add(folderPanel, BorderLayout.SOUTH);
+58 
+59         add(centerPanel, BorderLayout.CENTER);
+60 
+61         // The status bar
+62         add(statusBarLabel, BorderLayout.SOUTH);
+63     }
+64 }

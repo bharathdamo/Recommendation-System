@@ -1,0 +1,18 @@
+""
+"Foo"
+" "
+"Foo "
+"Foo Bar"
+" "
+"Foo Bar "
+"Foo Bar Bam"
+" "
+"Foo Bar Bam "
+"Foo Bar Bam Baz"
+" "
+"Foo Bar Bam Baz "We only process non null strings,
+We first split the mail into two parts to separate the personal information from the company information and we keep the name data,
+Then we split the name information to separate the first name from the last name. As the split() method use regular expression and . is a wildcard character, we have to escape it (\.). However, in a string, the \ is also a special character, so we need to escape it too (\\.),
+The last name is just capitalized,
+As the case of all the first name characters will not be the same, we have to cut the first name. Only the first name initial will be capitalized,
+Now we can concatenate all the fragments. We prefer to use a StringBuilder to do that.

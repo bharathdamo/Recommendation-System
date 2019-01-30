@@ -1,0 +1,55 @@
+ Collection
+ ArrayList
+ Map
+ Comparing ObjectsAdding element(s) to the collection
+Removing element(s) from the collection
+Obtaining the number of elements in the collection
+Listing the contents of the collection, (Iterating through the collection)Solution one : Override the int hashCode() method and return the same values for the same type of objects and return different values for different type of objects.  The equals() method is used to compare objects only with the same value of hashCode. So before an object is added, the Set implementation needs to:
+find all the objects in the Set that have the same hashCode as the candidate object hashCode
+and for those, call the equals() methods passing in the candidate object
+if any of them returns true, the object is not added to the Set.find all the objects in the Set that have the same hashCode as the candidate object hashCode
+and for those, call the equals() methods passing in the candidate object
+if any of them returns true, the object is not added to the Set.Solution two : Create a super class for the Apple and Orange, let's call it Fruit class. Put Fruits in the Set. You need to do the following:
+Do not override the equals() and hashCode() methods in the Apple and Orange classes
+Create appleEquals() method in the Apple class, and create orangeEquals() method in the Orange class
+Override the hashCode() method in the Fruit class and return the same value, so the equals() is called by the Set implementation
+Override the equals() method in the Fruit class for something like this.Do not override the equals() and hashCode() methods in the Apple and Orange classes
+Create appleEquals() method in the Apple class, and create orangeEquals() method in the Orange class
+Override the hashCode() method in the Fruit class and return the same value, so the equals() is called by the Set implementation
+Override the equals() method in the Fruit class for something like this.Only the objects that have the same hashCode will be compared.
+You are responsible to override the equals() and hashCode() methods. The default implementations in Object won't work.
+Only override the hashCode() method if you want to eliminate value duplicates.
+Do not override the hashCode() method if you know that the values of your objects are different, or if you only want to prevent adding the exactly same object.
+Beware that the hashCode() may be used in other collection implementations, like in a Hashtable to find an object fast. Overriding the default hashCode() method may affect performance there.
+The default hashCodes are unique for each object created, so if you decide not to override the hashCode() method, there is no point overriding the equals() method, as it won't be called.Search for a particular element
+List the elements
+Maintain and/or change the order of the elements by using the collection basic operations (Add, Remove, Update,..)
+Access the elements by an index numberGives a generic usage, as we talked about above, it is easy to switch implementation
+It makes it easy to convert one type of collection to another.The above code will work for all type of collections.
+We have to know the type of objects inside the collection, because we call a method on it.Book:Java Programming
+Not logged inDiscussion for this IP addressContributionsCreate accountLog in 
+BookDiscussion 
+
+ReadEditView history 
+
+Main PageHelpBrowseCookbookWikijuniorFeatured booksRecent changesDonationsRandom bookUsing Wikibooks 
+Reading roomCommunity portalBulletin BoardHelp out!Policies and guidelinesContact us 
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+DeutschFrançais 
+WikipediaWikiversityWiktionaryWikiquoteWikisourceWikinewsWikivoyageCommonsWikidata 
+Create a collectionDownload as PDFPrintable version 
+Wikimedia CommonsWikipedia 
+ This page was last edited on 17 September 2017, at 14:41.
+Text is available under the Creative Commons Attribution-ShareAlike License.; additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy.
+
+Privacy policy
+About Wikibooks
+Disclaimers
+Developers
+Cookie statement
+Mobile view
+
+
+ 
+
+ 

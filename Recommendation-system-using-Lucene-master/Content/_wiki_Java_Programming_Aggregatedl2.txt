@@ -1,0 +1,3 @@
+Example
+We can group together all patients in a Hospital to a "patient" collection.Example
+For each patient, there is one and only one main nurse assigned to. That association can be represented by a "patient-nurse" Map.

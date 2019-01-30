@@ -1,0 +1,46 @@
+
+
+The main difference between an applet and a regular command-line executed program is that applets allow for extensible Graphical User Interfaces (GUI).
+Since applets provide for the ability to create complex GUI, it is important for developers to know how to create such programs.
+In Java applets, graphical portions are initialized and added in two different areas.  While objects are initialized in the main class, they are added to the layout of the applet in the init() method.  This is done using the syntax of add(<object>).  A typical init() method looks something like this:
+The different aspects of this method will be covered below.
+Lots of applets use buttons.  There are only a few ways to have contact between the applet and the user, and the use of buttons is one of those ways.  Buttons are created the same way as most other Java applet objects:
+When initializing a button, it is necessary to define what text will appear on that button in the given parameter.  In this example, the button is initialized with the word "Submit" printed on it. Adding the button to the actual layout is done in the init() method, as described above.
+Allowing buttons to carry out tasks or utilize a user's input is a bit more complicated.  These functions require an ActionListener, and will be discussed in ActionListener section.
+
+Labels are areas in applets that contain text which can not be edited by the user.  This is usually ideal for descriptions (i.e. "Insert name:").  Labels are initialized and added to applet layouts in the same way as buttons.  Also, like buttons, the text inside labels must be identified at initialization.  If, however, the label will receive its text as the cause of a later function and should start off blank, no text should be placed between the quotation marks.
+
+TextFields are areas in applets that allow users to insert text.  The two parameters, which are optional, for TextFields can set predefined text in the field or set the number of columns allowed in the TextField.  Here are a few examples:
+
+Using stylish fonts in your Java applets may be necessary to help keep your Java applets attractive.  The setFont() allows for either the font used throughout the applet to be defined or for one element's font to be set at a time.
+The syntax for setting a font is setFont(<fontName>, <fontStyle>, <fontSize>).
+To make every font in the applet plain, size 24 Times New Roman, the following code should be used:
+It is not necessary to initialize the font and set the font through two different lines of code.
+However, to make the font of element a plain, size 24 Times New Roman, and element b italicized, size 28 Times New Roman, the following code should be used:
+To set the color of the fonts used in an applet, the setForeground(<color>) method is used.  This method already includes some predefined colors which can be used by calling, for example, setForeground(Color.white).  Here are all of the predefined colors:
+To create a custom color, the RGB values of the color can be passed in as the color parameter.  For example, if red were not a predefined color, one could use setForeground(new Color(255, 0, 0)) to define red.
+Just as font styles, font colors can be applied to separate elements.  The syntax follows the same pattern: a.setForeground(Color.white).
+Layouts are what make applets visible.  Without a layout, nothing would display.  There are five different types of layouts to choose from — some are very simple while others are complex.
+This layout places components left to right, using as much space as is needed. The Flow Layout is the default layout for applets and, therefore, does not need to be set.  However, for clarity, one can specify the applet layout as a Flow Layout by placing this line of code at the top of the init() method:
+The added components to the layout that follow will be placed on screen in order of which they are added.
+Assuming that these variables are defined the same as above, these lines of code will create the layout of an applet that is composed of a label, a text field, and a button.  They will all appear on one line if the window permits.  By changing the width of window, the Flow Layout will contract and expand the components accordingly.
+
+This layout arranges components in the form of the table (grid). The number of rows and columns in the grid is specified in the constructor. The other two parameters, if present, specify vertical and horizontal padding between components.
+
+The items have been displayed in this order:
+We see that the layout has been configured to fill the grid left-to-right and then top-to-bottom and that the two last columns have been ignored (they don't even exist). They have been ignored because there are not enough items to fill them and the number of rows is prior to the number of columns. This means that when you specify a number of rows that is not zero, the number of columns is simply ignored. You should specify zero rows in order that the number of columns is taken into account.
+A grid layout creates cells with equal sizes. So it can be used not only to display items as a grid but also to display two items with the same width or height.
+This layout places one big component in the center and up till four components at the edges. When adding to the container with this layout, you need to specify the location as the second parameter like BorderLayout.CENTER for the center or one of the world directions for the edge (BorderLayout.NORTH points to the top edge).
+
+If you have two components, it is not the same to put the first in the north and the second to the center as to put the first in the center and the second to the south. In the first case, the layout will calculate the size of the component and the second component will have all the space left. In the second case, it is the opposite.
+The card layout displays only one item at a time and is only interesting with interactivity. The other items are stored in a stack and the displayed item is one of the items of the stack. The name of the card layout is a reference to a playing card deck where you can see the card at the top of the stack and you can put a card on the top. The difference in the card layout is that the items in the stack keeps their order. When you use this layout, you must use this method to add items to the container, i.e. the applet:
+The card layout has several methods to change the currently displayed item:
+
+The main benefit of the layouts is that you can combine them one into another and you can do that with a panel. A panel is a component that has other components inside. A panel can then be added to the top component (frame or applet) or to another panel and be placed itself as defined by layout and constraints of this parent component. It has its own layout and is normally used to place a group of related components like buttons, for instance:
+Question 9.5: We want to create a basic FTP (File Transfer Protocol) software which looks like this:
+On the top, it should display the name of the software. Under the name, it should display tool buttons that are displayed from the left to the right and the sequence of buttons is wrapped if it reaches the right border. Under the buttons, it should display two lists of files. The widths of these two lists should be the same and they should use all the width of the application. Under these two lists, it should display a status bar.
+Create this display on an applet.
+First, we have to analyze the display. We have four separate areas of components:
+So we have to first separate these areas and then we will split these areas into components.
+
+We use a grid layout to display the folders to have the same width between the two components. We can't use a grid layout to separate the name, the buttons, the folders and the status bar as these areas have not the same height. The buttons must be at the center of the border layout as the number of row of buttons would be badly calculated and the last rows of buttons would not appear.

@@ -1,0 +1,19 @@
+@interface Secret { }
+
+@Documented
+@interface NotSecret { }
+
+@Secret
+@NotSecret
+public class Example {
+}
+@Inherited
+@interface ForEveryone { }
+
+@interface JustForMe { }
+
+@ForEveryone
+@JustForMe
+class Superclass { }
+
+class Subclass extends Superclass { }

@@ -1,0 +1,53 @@
+ Statements
+ Conditional blocks
+ Loop blocks
+ Boolean expressions
+ Variables
+ Primitive Types
+ Arithmetic expressions
+ Literals
+ Methods
+ String
+ Objects
+ Packages
+ Arrays
+ Mathematical functions
+ Large numbers
+ Random numbers
+ Unicode
+ Comments
+ Keywords
+ Coding conventions
+ Lambda expressionstrue represents a true boolean value
+false represents a false boolean valueinteger digits (must be followed by either an exponent or a suffix or both, to distinguish it from an integer literal)
+integer digits .
+integer digits . integer digits
+. integer digitsthe exponent indicator e or E
+an optional exponent sign + or - (the default being a positive exponent)
+integer digits representing the integer exponent valueeither f or F indicating a single precision (4 bytes) floating point number, or
+d or D indicating the number is a double precision floating point number (by default, thus the double precision (8 bytes) is default).Book:Java Programming
+Not logged inDiscussion for this IP addressContributionsCreate accountLog in 
+BookDiscussion 
+
+ReadEditView history 
+
+Main PageHelpBrowseCookbookWikijuniorFeatured booksRecent changesDonationsRandom bookUsing Wikibooks 
+Reading roomCommunity portalBulletin BoardHelp out!Policies and guidelinesContact us 
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationCite this page 
+
+WikipediaWikiversityWiktionaryWikiquoteWikisourceWikinewsWikivoyageCommonsWikidata 
+Create a collectionDownload as PDFPrintable version 
+ This page was last edited on 7 May 2018, at 20:45.
+Text is available under the Creative Commons Attribution-ShareAlike License.; additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy.
+
+Privacy policy
+About Wikibooks
+Disclaimers
+Developers
+Cookie statement
+Mobile view
+
+
+ 
+
+ 

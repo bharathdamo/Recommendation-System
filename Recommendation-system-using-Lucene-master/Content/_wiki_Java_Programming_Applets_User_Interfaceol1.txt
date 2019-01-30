@@ -1,0 +1,7 @@
+The totality of the components is put in a border layout so that we have three vertical areas of elements.
+The area in the north is the area of the title.
+The area in the center contains the buttons and the folders and will be split later.
+The area in the south is the area of the status bar.
+The area in the center is now split with a border layout into a button area in the center and a folder area in the south.
+The button area is then split with a flow layout.
+The folder area is now split with a grid layout.

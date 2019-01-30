@@ -1,0 +1,57 @@
+ Statements
+ Conditional blocks
+ Loop blocks
+ Boolean expressions
+ Variables
+ Primitive Types
+ Arithmetic expressions
+ Literals
+ Methods
+ String
+ Objects
+ Packages
+ Arrays
+ Mathematical functions
+ Large numbers
+ Random numbers
+ Unicode
+ Comments
+ Keywords
+ Coding conventions
+ Lambda expressionsInstance variables: These are variables that are used to store the state of an object (for example, id). Every object created from a class definition would have its own copy of the variable. It is valid for and occupies storage for as long as the corresponding object is in memory.
+Class variables: These variables are explicitly defined within the class-level scope with a static modifier (for example, isClassUsed). No other variables can have a static modifier attached to them. Because these variables are defined with the static modifier, there would always be a single copy of these variables no matter how many times the class has been instantiated. They live as long as the class is loaded in memory.
+Parameters or Arguments: These are variables passed into a method signature (for example, parameter). Recall the usage of the args variable in the main method. They are not attached to modifiers (i.e. public, private, protected or static) and they can be used everywhere in the method. They are in memory during the execution of the method and can't be used after the method returns.
+Local variables: These variables are defined and used specifically within the method-level scope (for example, currentValue) but not in the method signature. They do not have any modifiers attached to it. They no longer exist after the method has returned.a and b are instance variables;
+c is a class variable;
+d is a parameter or argument; and,
+e is a local variable.Create a variable by giving it a unique name; and,
+Define a data type for the variable.Characters A to Z and their lower-case counterparts a to z.
+Numbers 0 to 9. However, numbers should not come at the beginning of a variable's name.
+And finally, special characters that include only $ (dollar sign) and _ (underscore).The name of the variable should reflect the value within them.
+The identifier should be named following the naming guidelines or conventions for doing so. We will explain that in a bit.
+The identifier shouldn't be a nonsense name like lname, you should always name it properly: lastName is the best way of naming a variable.Book:Java Programming
+Not logged inDiscussion for this IP addressContributionsCreate accountLog in 
+BookDiscussion 
+
+ReadLatest draftEditView history 
+
+Main PageHelpBrowseCookbookWikijuniorFeatured booksRecent changesDonationsRandom bookUsing Wikibooks 
+Reading roomCommunity portalBulletin BoardHelp out!Policies and guidelinesContact us 
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationCite this page 
+
+WikipediaWikiversityWiktionaryWikiquoteWikisourceWikinewsWikivoyageCommonsWikidata 
+Create a collectionDownload as PDFPrintable version 
+ This page was last edited on 17 September 2017, at 14:43.
+Text is available under the Creative Commons Attribution-ShareAlike License.; additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy.
+
+Privacy policy
+About Wikibooks
+Disclaimers
+Developers
+Cookie statement
+Mobile view
+
+
+ 
+
+ 

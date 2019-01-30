@@ -1,0 +1,38 @@
+
+
+String is a class built into the Java language defined in the java.lang package. It represents character strings. Strings are ubiquitous in Java. Study the String class and its methods carefully. It will serve you well to know how to manipulate them skillfully. String literals in Java programs, such as "abc", are implemented as instances of this class like this:
+On the right hand side a String object is created represented by the string literal. Its object reference is assigned to the str variable.
+Strings are immutable; that is, they cannot be modified once created. Whenever it looks as if a String object was modified actually a new String object was created. For instance, the String.trim() method returns the string with leading and trailing whitespace removed. Actually, it creates a new trimmed string and then returns it. Pay attention on what happens in Code section 3.82:
+The trim() method call does not modify the object so nothing happens. It creates a new trimmed string and then throws it away.
+The returned string is assigned to the variable. It does the job as the trim() method has created a new String instance.
+The Java language provides special support for the string concatenation with operator +:
+The concatenation is not always processed at the same time. Raw string literals concatenation is done at compile time, hence there is a single string literal in the byte code of the class. Concatenation with at least one object is done at runtime.
++ operator can concatenate other objects with strings. For instance, integers will be converted to strings before the concatenation:
+Each Java object has the String toString() inherited from the Object class. This method provides a way to convert objects into Strings. Most classes override the default behavior to provide more specific (and more useful) data in the returned String:
+Remember that String objects are immutable objects. Once a String is created, it can not be modified, takes up memory until garbage collected. Be careful of writing a method like this:
+On the + operation a new String object is created at each iteration. Suppose words contains the elements ["Foo", "Bar", "Bam", "Baz"]. At runtime, the method creates thirteen Strings:
+Even though only the last one is actually useful.
+To avoid unnecessary memory use like this, use the StringBuilder class. It provides similar functionality to Strings, but stores its data in a mutable way. Only one StringBuilder object is created. Also because object creation is time consuming, using StringBuilder produces much faster code.
+As StringBuilder isn't thread safe (see the chapter on Concurrency) you can't use it in more than one thread. For a multi-thread environment, use StringBuffer instead which does the same and is thread safe. However, StringBuffer is slower so only use it when it is required. Moreover, before Java 5 only StringBuffer existed.
+Comparing strings is not as easy as it may first seem. Be aware of what you are doing when comparing String's using ==:
+The difference between the above and below code is that the above code checks
+to see if the String's are the same objects in memory which they are. This is as a result of the fact that
+String's are stored in a place in memory called the String Constant Pool. If the new keyword is not explicitly used when 
+creating the String it checks to see if it already exists in the Pool and uses the existing one. If it does not exist, a new Object is created. This is what allows Strings to be immutable in Java.
+To test for equality, use the equals(Object) method inherited by every class and defined by String to return true if and only if the object passed in is a String contains the exact same data:
+Remember that the comparison is case sensitive.
+To order String objects, use the compareTo() method, which can be accessed wherever we use a String datatype. The compareTo() method returns a negative, zero, or positive number if the parameter is less than, equal to, or greater than the object on which it is called. Let's take a look at an example:
+The code section 3.92 is comparing the String variable person1 to person2. If person1 is different even in the slightest manner, we will get a value above or below 0 depending on the exact difference. The result is negative if this String object lexicographically precedes the argument string. The result is positive if this String object lexicographically follows the argument string. Take a look at the Java API for more details.
+Sometimes it is useful to split a string into separate strings, based on a regular expressions. The String class has a split() method, since Java 1.4, that will return a String array:
+Another useful application could be to split the String text based on the new line character, so you could process the text line by line.
+It may also be sometimes useful to create substrings, or strings using the order of letters from an existing string.  This can be done in two methods.
+The first method involves creating a substring out of the characters of a string from a given index to the end:
+The index of the first character in a string is 0.
+By counting from there, it is apparent that the character in index 3 is the second "f" in "coffee". This is known as the beginIndex. All characters from the beginIndex until the end of the string will be copied into the new substring.
+The second method involves a user-defined beginIndex and endIndex:
+The string returned by substring() would be "port".
+Please note that the endIndex is not inclusive. This means that the last character will be of the index endIndex-1. Therefore, in this example, every character from index 3 to index 6, inclusive, was copied into the substring.
+The String class also allows for the modification of cases. The two methods that make this possible are toLowerCase() and toUpperCase().
+These methods are useful to do a search which is not case sensitive:
+Question 3.12: You have mail addresses in the following form: <firstName>.<lastName>@<companyName>.org
+Write the String getDisplayName(String) method that receives the mail string as parameter and returns the readable person name like this: LASTNAME Firstname

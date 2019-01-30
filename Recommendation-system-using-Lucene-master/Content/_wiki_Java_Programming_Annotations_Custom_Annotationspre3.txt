@@ -1,0 +1,30 @@
+@interface CodeDescription
+{
+    String author();
+    String version();
+}
+public class MyMethod
+{
+    @CodeDescription
+    (
+        author = "Unknown",
+        version = "1.0.0.1"
+    )
+    public void doSomething()
+    {
+        ...
+    }
+}
+@interface CodeDescription
+{
+    String author();
+    String version() default "1.0.0.1";
+}
+public class MyMethod
+{
+    @CodeDescription(author = "Sysop")
+    public void doSomething()
+    {
+        ...
+    }
+}

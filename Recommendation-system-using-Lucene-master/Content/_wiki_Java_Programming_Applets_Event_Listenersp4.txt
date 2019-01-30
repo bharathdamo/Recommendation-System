@@ -1,0 +1,9 @@
+
+
+An Event Listener, once set to an applet object, waits for some action to be performed on it, be it mouse click, mouse hover, pressing of keys, click of button, etc. The class you are using (e.g. JButton, etc.) reports the activity to a class set by the class using it. That method then decides on how to react because of that action, usually with a series of if statements to determine which action it was performed on. source.getSource() will return the name of the object that the event was performed on, while the source is the object passed to the function when the action is performed. Every single time the action is performed, it calls the method.
+ActionListener is an interface that could be implemented in order to determine how a certain event should be handled. When implementing an interface, all methods in that interface should be implemented, ActionListener interface has one method to implement named actionPerformed().
+The code listing 9.6 shows how to implement ActionListener:
+When you compile and run the above code, the message "Hi!!!" will appear when you click on the button.
+Applet mouse listener does not differ from the AWT mouse listener in general. When the mouse is in the applet area, the listener receives notifications about the mouse clicks and drags (if MouseListener is registered) and mouse movements (if MouseMotionListener is registered). As applets are often small, it is a common practice to let applet itself to implement the mouse listeners.
+
+To do:Add some exercises like the ones in Variables

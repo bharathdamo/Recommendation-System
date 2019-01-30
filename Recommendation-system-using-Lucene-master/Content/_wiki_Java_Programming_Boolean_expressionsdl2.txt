@@ -1,0 +1,1 @@
+For help on simplifying complex logic, see De Morgan's laws.For the bitwise operations on & and |, see Arithmetic expressions.

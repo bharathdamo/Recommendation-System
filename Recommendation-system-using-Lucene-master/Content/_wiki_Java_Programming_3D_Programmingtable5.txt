@@ -1,0 +1,38 @@
+ Networking
+ Database programming
+ Regular Expressions
+ Libraries, extensions and frameworks
+ 3D programming
+ Java Native Interface
+ Invoking C
+ Byte CodeTo implement or use features that are platform-specific.
+To implement or use features that the standard Java class library does not support.
+To enable an existing application—written in another programming language—to be accessible to Java applications.
+To let a native method use Java objects in the same way that Java code uses these objects (a native method can create Java objects and then inspect and use these objects to perform its tasks).
+To let a native method inspect and use objects created by Java application code.
+For time-critical calculations or operations like solving complicated mathematical equations (native code may be faster than JVM code).Book:Java Programming
+Not logged inDiscussion for this IP addressContributionsCreate accountLog in 
+BookDiscussion 
+
+ReadLatest draftEditView history 
+
+Main PageHelpBrowseCookbookWikijuniorFeatured booksRecent changesDonationsRandom bookUsing Wikibooks 
+Reading roomCommunity portalBulletin BoardHelp out!Policies and guidelinesContact us 
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationCite this page 
+
+WikipediaWikiversityWiktionaryWikiquoteWikisourceWikinewsWikivoyageCommonsWikidata 
+Create a collectionDownload as PDFPrintable version 
+ This page was last edited on 17 September 2017, at 14:42.
+Text is available under the Creative Commons Attribution-ShareAlike License.; additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy.
+
+Privacy policy
+About Wikibooks
+Disclaimers
+Developers
+Cookie statement
+Mobile view
+
+
+ 
+
+ 

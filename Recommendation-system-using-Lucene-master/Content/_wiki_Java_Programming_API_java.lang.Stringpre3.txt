@@ -1,0 +1,132 @@
+1 String str = "This is string literal";
+1 String badlyCutText = "     Java is great.     ";
+2 System.out.println(badlyCutText);
+3 
+4 badlyCutText.trim();
+5 System.out.println(badlyCutText);
+     Java is great.    
+     Java is great.    
+1 String badlyCutText = "     Java is great.     ";
+2 System.out.println(badlyCutText);
+3 
+4 badlyCutText = badlyCutText.trim();
+5 System.out.println(badlyCutText);
+     Java is great.    
+Java is great.
+1 System.out.println("First part");
+2 System.out.println(" second part");
+3 String str = "First part" + " second part";
+4 System.out.println(str);
+First part
+ second part
+First part second part
+1 System.out.println("Age=" + 25);
+Age=25
+1 System.out.println("Age=" + new Integer(31));
+Age=31
+1 public String convertToString(Collection<String> words) {
+2   String str = "";
+3   // Loops through every element in words collection
+4   for (String word : words) {
+5     str = str + word + " ";
+6   }
+7   return str;
+8 }
+1 public String convertToString(Collection<String> words) {
+2   StringBuilder buf = new StringBuilder();
+3   // Loops through every element in words collection
+4   for (String word : words) {
+5     buf.append(word);
+6     buf.append(" ");
+7   }
+8   return buf.toString();
+9 }
+1 String greeting = "Hello World!";
+2 if (greeting == "Hello World!") {
+3     System.out.println("Match found.");
+4 }
+Match found.
+1 String greeting = "Hello World!";
+2 if (greeting.equals("Hello World!")) {
+3     System.out.println("Match found.");
+4 }
+Match found.
+1 String greeting = "Hello World!";
+2 if (greeting.equals("hello world!")) {
+3     System.out.println("Match found.");
+4 }
+1 String person1 = "Peter";
+2 String person2 = "John";
+3 if (person1.compareTo(person2) > 0) {
+4     // Badly ordered
+5     String temp = person1;
+6     person1 = person2;
+7     person2 = temp;
+8 }
+1 String person = "Brown, John:100 Yonge Street, Toronto:(416)777-9999";
+2 ...
+3 String[] personData = person.split(":");
+4 ...
+5 String name    = personData[0];
+6 String address = personData[1];
+7 String phone   = personData[2];
+1 String str = "coffee";
+2 System.out.println(str.substring(3));
+fee
+1 String str = "supporting";
+2 System.out.println(str.substring(3, 7));
+port
+1 String str = "wIkIbOoKs";
+2 System.out.println(str.toLowerCase());
+3 System.out.println(str.toUpperCase());
+wikibooks
+WIKIBOOKS
+ 1 String word = "Integer";
+ 2 String text = "A number without a decimal part is an integer."
+ 3   + " Integers are a list of digits.";
+ 4 
+ 5 ...
+ 6 
+ 7 // Remove the case
+ 8 String lowerCaseWord = word.toLowerCase();
+ 9 String lowerCaseText = text.toLowerCase();
+10 
+11 // Search
+12 int index = lowerCaseText.indexOf(lowerCaseWord);
+13 while (index != -1) {
+14   System.out.println(word
+15     + " appears at column "
+16     + (index + 1)
+17     + ".");
+18   index = lowerCaseText.indexOf(lowerCaseWord, index + 1);
+19 }
+Integer appears at column 38.
+Integer appears at column 47.
+ 1 public static String getDisplayName(String mail) {
+ 2   String displayName = null;
+ 3  
+ 4   if (mail != null) {
+ 5     String[] mailParts = mail.split("@");
+ 6     String namePart = mailParts[0];
+ 7     String[] namesParts = namePart.split("\\.");
+ 8    
+ 9     // The last name
+10     String lastName = namesParts[1];
+11     lastName = lastName.toUpperCase();
+12    
+13     // The first name
+14     String firstName = namesParts[0];
+15    
+16     String firstNameInitial = firstName.substring(0, 1);
+17     firstNameInitial = firstNameInitial.toUpperCase();
+18    
+19     String firstNameEnd = firstName.substring(1);
+20     firstNameEnd = firstNameEnd.toLowerCase();
+21    
+22     // Concatenation
+23     StringBuilder displayNameBuilder = new StringBuilder(lastName).append(" ").append(firstNameInitial).append(firstNameEnd);
+24     displayName = displayNameBuilder.toString();
+25   }
+26  
+27   return displayName;
+28 }

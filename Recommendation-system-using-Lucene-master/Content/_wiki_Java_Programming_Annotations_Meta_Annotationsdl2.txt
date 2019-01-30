@@ -1,0 +1,6 @@
+RetentionPolicy.SOURCE
+The annotation will not be included in the class file. This is useful for annotations which are intended for the compiler only.
+RetentionPolicy.CLASS
+The annotation will be included in the class file, but cannot be read reflectively.
+RetentionPolicy.RUNTIME
+The annotation can be reflected at runtime.

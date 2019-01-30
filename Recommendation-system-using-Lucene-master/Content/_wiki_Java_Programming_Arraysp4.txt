@@ -1,0 +1,20 @@
+
+An array is similar to a table of objects or primitive types, keyed by index. You may have noticed the strange parameter of the default main() method (String[] args) since the beginning of the book. It is an array. Let's handle this parameter:
+In the code listing 3.15, the array is args. It is an array of String objects (here those objects are the words that have been typed by the user at the program launching). At line 4, One contained object is accessed using its index in the array. You can see that its value is printed on the standard output. Note that the strings have been put in the array with the right order.
+In Java, an array is an object. This object has a given type for the contained primitive types or objects (int, char, String, ...). An array can be declared in several ways:
+Those syntaxes are identical but the first one is recommended. It can also be instantiated in several ways:
+At line 1, we instantiate an array of 10 items that get the default value (which is 0 for int). At lines 2 and 3, we instantiate arrays of 10 given items. It will each be given an index according to its order. We can know the size of the array using the length attribute:
+Arrays are allocated at runtime, so the specified size in an array creation expression may be a variable (rather than a constant expression as in C). However, the size of an instantiated array never changes. If you need to change the size, you have to create a new instance. Items can be accessed by their index. Beware! The first index is 0:
+If you attempt to access to a too high index or negative index, you will get an ArrayIndexOutOfBoundsException.
+Question 3.20: Consider the following code:
+What will be printed in the standard output?
+Indexes start at 0. So the index 1 point at the second string (can't). There are 4 items so the size of the array is 4. Hence the item pointed by the index 3 is the last one (choosers).
+Actually, there are no two-dimensional arrays in Java. However, an array can contain any class of object, including an array:
+It's not exactly equivalent to two-dimensional arrays because the size of the sub-arrays may vary. The sub-array reference can even be null. Consider:
+Note that the length of a two-dimensional array is the number of one-dimensional arrays it contains. In the above example, weirdTwoDimArray.length is 3, whereas weirdTwoDimArray[2].length is 5.
+In the code section 3.58, we defined an array that has three elements, each element contains an array having 5 elements. We could create the array having the 5 elements first and use that one in the initialize block.
+Question 3.21: Consider the following code:
+Print the whole alphabet in the standard output.
+i will be the indexes of the main array and j will be the indexes of all the sub-arrays. We have to first iterate on the main array. We have to read the size of the array. Then we iterate on each sub-array. We have to read the size of each array as it may vary. Doing so, we iterate on all the sub-array items using the indexes. All the items will be read in the right order.
+Going further any number of dimensional array can be defined.
+or
